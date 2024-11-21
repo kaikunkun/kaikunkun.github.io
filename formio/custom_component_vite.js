@@ -87585,9 +87585,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
      */
     static schema(...e) {
       return $V.schema({
-        type: "mycomp",
+        type: "mycomponent",
         label: "My Component",
-        key: "mycomp"
+        key: "mycomponent"
       });
     }
     /**
