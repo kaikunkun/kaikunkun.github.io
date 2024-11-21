@@ -87636,7 +87636,6 @@ N0.Formio.use([
   {
     components: {
       rating: yR
-      // checkmatrix: CheckMatrix,
     }
   }
 ]);
