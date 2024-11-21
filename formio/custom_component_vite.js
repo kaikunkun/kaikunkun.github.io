@@ -87627,25 +87627,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     init() {
       super.init();
     }
-    // /**
-    //  * For Input based components, this returns the <input> attributes that should
-    //  * be added to the input elements of the component. This is useful if you wish
-    //  * to alter the "name" and "class" attributes on the <input> elements created
-    //  * within this component.
-    //  *
-    //  * @return - A JSON object that is the attribute information to be added to the
-    //  *           input element of a component.
-    //  */
-    // get inputInfo(): {
-    //   id: string | number;
-    //   type: string;
-    //   changeEvent: string;
-    //   content?: any;
-    //   attr: any;
-    // } {
-    //   const info = super.inputInfo;
-    //   return info;
-    // }
+    /**
+     * For Input based components, this returns the <input> attributes that should
+     * be added to the input elements of the component. This is useful if you wish
+     * to alter the "name" and "class" attributes on the <input> elements created
+     * within this component.
+     *
+     * @return - A JSON object that is the attribute information to be added to the
+     *           input element of a component.
+     */
+    // @ts-expect-error
+    get inputInfo() {
+      let e = super.inputInfo;
+      return e = e, e;
+    }
+    set inputInfo(e) {
+    }
     /**
      * This method is used to render a component as an HTML string. This method uses
      * the template system (see Form Templates documentation) to take a template
@@ -87658,7 +87655,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
      * @return - An HTML string of this component.
      */
     render(e) {
-      return console.log(e), super.render('<div ref="customRef">This is a custom component!</div>');
+      return super.render(`<div ref="customRef">${JSON.stringify(e)}</div>`);
     }
     /**
      * The attach method is called after "render" which takes the rendered contents
@@ -87673,10 +87670,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
      *           attach phase.
      */
     attach(e) {
-      return this.loadRefs(e, {
+      var i;
+      this.loadRefs(e, {
         customRef: "single"
-      }), this.addEventListener(this.refs.customRef, "click", () => {
-        console.log("Custom Ref has been clicked!!!");
+      });
+      const n = (i = this.refs) == null ? void 0 : i.customRef;
+      return n && this.addEventListener(n, "click", () => {
+        console.log("Custom Ref has been clicked!");
       }), super.attach(e);
     }
     /**
@@ -87784,6 +87784,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   const hZe = {
     mycomponent: gR
   };
-  V0.Formio.use(hZe);
+  V0.Formio.use({
+    components: hZe
+  });
 });
 export default vZe();
