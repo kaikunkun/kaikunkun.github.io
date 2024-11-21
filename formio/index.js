@@ -86,10 +86,10 @@ Formio.use([
     }
 ])
 
-Formio.createForm(document.getElementById('formio'), {
-    components: [
-        {
-            type: "rating"
-        },
-    ]
-}, {})
+// Formio.createForm(document.getElementById('formio'), {
+//     components: [
+//         {
+//             type: "rating"
+//         },
+//     ]
+// }, {})
