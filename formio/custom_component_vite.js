@@ -1,5 +1,5 @@
 var CQ = (r, e) => () => (e || r((e = { exports: {} }).exports, e), e.exports);
-var vZe = CQ((yZe, sh) => {
+var hZe = CQ((mZe, sh) => {
   var St = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
   function Na(r) {
     if (r.__esModule) return r;
@@ -87781,11 +87781,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     //   return super.updateValue(value, flags);
     // }
   }
-  const hZe = {
-    mycomponent: gR
-  };
-  V0.Formio.use({
-    components: hZe
-  });
+  V0.Formio.use([
+    {
+      components: {
+        mycomponent: gR
+      }
+    }
+  ]);
 });
-export default vZe();
+export default hZe();
