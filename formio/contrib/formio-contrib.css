@@ -1,0 +1,42 @@
+.tree__level_even {
+  background-color: #f6f6f6;
+}
+.tree__node-content {
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+.tree__node-children {
+  margin: 0;
+}
+
+.tree-listgroup {
+  flex-direction: row;
+}
+
+.dynamicWizard-listgroup .list-group-card {
+  padding: 0;
+  list-style-type: none;
+}
+@media (max-width: 568px) {
+  .dynamicWizard-listgroup .list-group-card .list-group-item.list-group-subheader .row {
+    justify-content: space-between;
+  }
+  .dynamicWizard-listgroup .list-group-card .list-group-item.list-group-subheader .row .col-sm-2 {
+    width: auto;
+  }
+}
+.dynamicWizard-listgroup .list-group-field {
+  list-style-type: none;
+}
+
+.dynamicWizard-changingMode .formio-component {
+  display: none;
+}
+.dynamicWizard-changingMode .formio-component.formio-component-dynamicWizard {
+  display: block;
+}
+.dynamicWizard-changingMode .formio-component.formio-component-dynamicWizard .formio-component {
+  display: block;
+}
+
+/*# sourceMappingURL=formio-contrib.css.map */
